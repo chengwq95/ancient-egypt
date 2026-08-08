@@ -2,12 +2,12 @@
 <html lang="zh-CN"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#050b16">
-<meta name="description" content="中英双语的古埃及科普长页面：九柱神世系、众神图鉴、尼罗河古地图、纸莎草卷轴上的三千年王朝史与奥西里斯传说。">
+<meta name="description" content="中英双语的古埃及科普长页面，共 17 章：九柱神家谱、可筛选的众神图鉴、看头饰认神的辨识指南、手绘尼罗河古地图，以及纸莎草卷轴上的十四章王朝史与十章奥西里斯传说，另有 37 条术语表与常见误解问答。所有配图由 AI 生成。">
 <link rel="canonical" href="https://ancient-egypt-stories.pages.dev/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="古埃及文明全景">
-<meta property="og:title" content="古埃及文明全景 · Ancient Egypt">
-<meta property="og:description" content="中英双语 · 17 章 · 从创世神话到罗马征服。九柱神世系、可筛选的众神图鉴、手绘尼罗河古地图、可拖拽的纸莎草卷轴。">
+<meta property="og:title" content="古埃及文明全景：从创世神话到罗马征服 · Ancient Egypt in 17 Chapters">
+<meta property="og:description" content="中英双语，17 章：九柱神家谱、18 位神祇的可筛选图鉴、看头饰认神的辨识指南、手绘的尼罗河古地图，以及两卷可拖拽展开的纸莎草——十四章王朝史与十章奥西里斯传说。点开即读，无需注册。">
 <meta property="og:url" content="https://ancient-egypt-stories.pages.dev/">
 <meta property="og:image" content="https://ancient-egypt-stories.pages.dev/og-cover.jpg">
 <meta property="og:image:width" content="1200">
@@ -16,13 +16,13 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="古埃及文明全景 · Ancient Egypt">
-<meta name="twitter:description" content="中英双语 · 17 章 · 从创世神话到罗马征服。">
+<meta name="twitter:title" content="古埃及文明全景：从创世神话到罗马征服 · Ancient Egypt in 17 Chapters">
+<meta name="twitter:description" content="中英双语，17 章：九柱神家谱、可筛选的众神图鉴、手绘尼罗河古地图，以及两卷可拖拽展开的纸莎草卷轴。点开即读。">
 <meta name="twitter:image" content="https://ancient-egypt-stories.pages.dev/og-cover.jpg">
 
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23070f1e'/%3E%3Cg fill='none' stroke='%23d8b45c' stroke-width='2.8' stroke-linecap='round'%3E%3Cellipse cx='16' cy='10' rx='4.6' ry='5.4'/%3E%3Cpath d='M16 15.4V27M9.6 18.6h12.8'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23070f1e'/%3E%3Cg fill='none' stroke='%23d8b45c' stroke-width='2.8' stroke-linecap='round'%3E%3Cellipse cx='16' cy='10' rx='4.6' ry='5.4'/%3E%3Cpath d='M16 15.4V27M9.6 18.6h12.8'/%3E%3C/g%3E%3C/svg%3E">
-<title>古埃及文明全景 · Ancient Egypt</title>
+<title>古埃及文明全景：从创世神话到罗马征服 · Ancient Egypt in 17 Chapters</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -648,6 +648,8 @@ table.tb td:first-child{font-family:"Noto Sans Egyptian Hieroglyphs","Noto Serif
 .bk-btn:hover:not(:disabled){background:rgba(216,180,92,.15);border-color:var(--gold);transform:translateY(-2px)}
 .bk-btn:disabled{opacity:.3;cursor:default}
 .bk-btn svg{width:13px;height:13px}
+.bk-edge{padding:9px 11px}
+.bk-edge svg{width:14px;height:14px}
 .bk-ind{font-family:var(--sans);font-size:.74rem;color:var(--txt3);letter-spacing:.1em;min-width:96px;text-align:center}
 .bk-dots{display:flex;gap:5px;justify-content:center;margin-top:12px;flex-wrap:wrap}
 .bk-dot{width:7px;height:7px;border-radius:50%;background:rgba(216,180,92,.22);cursor:pointer;transition:.25s;border:none;padding:0}
@@ -2794,8 +2796,8 @@ function renderAbout(){
 SECMAP.about=function(){renderAbout()};
 /* ============ v11: 五分钟路线 + 卷末跳转 ============ */
 (function(){
- var add={zh:{'q5.t':'五分钟看懂古埃及','q5.s':'只想快速了解？沿这条线走一遍，就能看懂剩下的部分','bk.end':'跳到卷末'},
-  en:{'q5.t':'Ancient Egypt in Five Minutes','q5.s':'In a hurry? Walk this line once and the rest of the page will make sense','bk.end':'Skip to end'}};
+ var add={zh:{'q5.t':'五分钟看懂古埃及','q5.s':'只想快速了解？沿这条线走一遍，就能看懂剩下的部分','bk.end':'跳到卷末','bk.first':'回到卷首'},
+  en:{'q5.t':'Ancient Egypt in Five Minutes','q5.s':'In a hurry? Walk this line once and the rest of the page will make sense','bk.end':'Skip to end','bk.first':'Back to start'}};
  for(var k in add.zh)I18N.zh[k]=add.zh[k];
  for(var k2 in add.en)I18N.en[k2]=add.en[k2];
 })();
@@ -2823,18 +2825,34 @@ function renderQ5(){
      '<div class="q5-t">'+L(q.t)+'</div><div class="q5-d">'+L(q.d)+'</div></a>';}
  g.innerHTML=h;
 }
-/* 卷轴：加一个跳到卷末的按钮 */
+/* 卷轴：卷首 / 卷末 两个跳转按钮 */
 var _buildRaw=buildBook;
 buildBook=function(id,pages){
  _buildRaw(id,pages);
  var b=books[id];if(!b)return;
- var nav=b.el.querySelector('.bk-nav');if(!nav)return;
- if(nav.querySelector('[data-act=end]'))return;
- var btn=document.createElement('button');
- btn.className='bk-btn';btn.setAttribute('data-act','end');
- btn.innerHTML=I18N[Lang]['bk.end']+'<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 4l6 6-6 6M14 4v12"/></svg>';
- btn.addEventListener('click',function(){jump(id,maxPos(b))});
- nav.appendChild(btn);
+ var nav=b.el.querySelector('.bk-nav');if(!nav||nav.querySelector('[data-act=first]'))return;
+ function mk(act,label,path,target){
+  var t=document.createElement('button');
+  t.className='bk-btn bk-edge';t.setAttribute('data-act',act);
+  t.title=label;t.setAttribute('aria-label',label);
+  t.innerHTML='<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7">'+path+'</svg>';
+  t.addEventListener('click',function(){jump(id,target())});
+  return t;
+ }
+ var first=mk('first',I18N[Lang]['bk.first'],'<path d="M14 4l-6 6 6 6M6 4v12"/>',function(){return 0});
+ var last =mk('end',  I18N[Lang]['bk.end'],  '<path d="M6 4l6 6-6 6M14 4v12"/>',function(){return maxPos(b)});
+ nav.insertBefore(first,nav.firstChild);
+ nav.appendChild(last);
+ function sync(){
+  first.disabled=(b.cur===0);
+  last.disabled=(b.cur===maxPos(b));
+ }
+ b._syncEdge=sync;sync();
+};
+var _jumpEdge=jump;
+jump=function(id,to,silent){
+ _jumpEdge(id,to,silent);
+ var b=books[id];if(b&&b._syncEdge)b._syncEdge();
 };
 var _renderAllRaw=renderAll;
 renderAll=function(){_renderAllRaw();renderQ5();observe();};
