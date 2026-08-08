@@ -2,6 +2,24 @@
 <html lang="zh-CN"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#050b16">
+<meta name="description" content="中英双语的古埃及科普长页面：九柱神世系、众神图鉴、尼罗河古地图、纸莎草卷轴上的三千年王朝史与奥西里斯传说。">
+<link rel="canonical" href="https://ancient-egypt-stories.pages.dev/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="古埃及文明全景">
+<meta property="og:title" content="古埃及文明全景 · Ancient Egypt">
+<meta property="og:description" content="中英双语 · 17 章 · 从创世神话到罗马征服。九柱神世系、可筛选的众神图鉴、手绘尼罗河古地图、可拖拽的纸莎草卷轴。">
+<meta property="og:url" content="https://ancient-egypt-stories.pages.dev/">
+<meta property="og:image" content="https://ancient-egypt-stories.pages.dev/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="吉萨大金字塔与标题「古埃及文明全景」">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="古埃及文明全景 · Ancient Egypt">
+<meta name="twitter:description" content="中英双语 · 17 章 · 从创世神话到罗马征服。">
+<meta name="twitter:image" content="https://ancient-egypt-stories.pages.dev/og-cover.jpg">
+
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23070f1e'/%3E%3Cg fill='none' stroke='%23d8b45c' stroke-width='2.8' stroke-linecap='round'%3E%3Cellipse cx='16' cy='10' rx='4.6' ry='5.4'/%3E%3Cpath d='M16 15.4V27M9.6 18.6h12.8'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23070f1e'/%3E%3Cg fill='none' stroke='%23d8b45c' stroke-width='2.8' stroke-linecap='round'%3E%3Cellipse cx='16' cy='10' rx='4.6' ry='5.4'/%3E%3Cpath d='M16 15.4V27M9.6 18.6h12.8'/%3E%3C/g%3E%3C/svg%3E">
 <title>古埃及文明全景 · Ancient Egypt</title>
@@ -506,6 +524,45 @@ table.tb td:first-child{font-family:"Noto Sans Egyptian Hieroglyphs","Noto Serif
  backdrop-filter:blur(5px);pointer-events:none}
 [data-theme=light] .aibadge{background:rgba(58,44,20,.72);color:#f8efd6}
 .foot-note{max-width:660px;margin:14px auto 0;color:var(--txt3);font-size:.74rem;line-height:1.85;opacity:.75}
+/* ---------- lightbox ---------- */
+.icf{cursor:zoom-in}
+.zoomi{position:absolute;right:11px;top:10px;z-index:3;width:26px;height:26px;border-radius:50%;
+ background:rgba(6,12,24,.6);border:1px solid rgba(216,180,92,.3);color:#f0e0b4;
+ display:flex;align-items:center;justify-content:center;opacity:0;transition:.25s;backdrop-filter:blur(4px)}
+.zoomi svg{width:13px;height:13px}
+.ic:hover .zoomi,.icf:focus-visible .zoomi{opacity:1}
+.lb{position:fixed;inset:0;background:rgba(3,7,14,.95);z-index:2200;display:flex;flex-direction:column;
+ align-items:center;justify-content:center;padding:32px 26px;opacity:0;visibility:hidden;transition:.3s;backdrop-filter:blur(6px)}
+[data-theme=light] .lb{background:rgba(228,214,180,.96)}
+.lb.on{opacity:1;visibility:visible}
+.lb img{max-width:min(1400px,100%);max-height:78vh;border-radius:5px;box-shadow:0 30px 80px rgba(0,0,0,.6);display:block}
+.lb-bar{margin-top:18px;max-width:760px;text-align:center}
+.lb-cap{color:var(--txt);font-size:.92rem;line-height:1.7}
+.lb-ai{display:inline-block;margin-top:9px;background:rgba(216,180,92,.12);border:1px solid rgba(216,180,92,.28);
+ color:var(--gold-light);padding:3px 12px;border-radius:16px;font-size:.68rem}
+.lb-close{position:absolute;top:18px;right:22px;width:40px;height:40px;border-radius:50%;
+ border:1px solid rgba(216,180,92,.3);background:rgba(216,180,92,.1);color:var(--gold);font-size:1.1rem;cursor:pointer;
+ display:flex;align-items:center;justify-content:center;transition:.25s}
+.lb-close:hover{background:rgba(216,180,92,.22);transform:rotate(90deg)}
+/* ---------- five-minute route ---------- */
+.q5{max-width:var(--maxw);margin:0 auto;padding:0 24px 12px;position:relative;z-index:1}
+.q5-h{text-align:center;margin-bottom:26px}
+.q5-h h2{font-family:Cinzel,var(--serif);font-size:clamp(1.2rem,3vw,1.6rem);color:var(--gold);letter-spacing:.06em;margin-bottom:8px}
+.q5-h p{color:var(--txt3);font-size:.87rem}
+.q5-g{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;position:relative}
+.q5-g::before{content:"";position:absolute;left:8%;right:8%;top:30px;height:1px;
+ background:linear-gradient(90deg,transparent,rgba(216,180,92,.35),rgba(216,180,92,.35),transparent);z-index:0}
+.q5-i{position:relative;z-index:1;background:var(--card);border:1px solid var(--card-b);border-radius:13px;
+ padding:16px 15px 17px;text-decoration:none;display:block;transition:.3s}
+.q5-i:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:var(--shadow)}
+.q5-n{width:29px;height:29px;border-radius:50%;background:var(--bg);border:1px solid var(--gold);color:var(--gold);
+ display:flex;align-items:center;justify-content:center;font-family:Cinzel,serif;font-size:.8rem;margin:0 auto 11px}
+.q5-i:hover .q5-n{background:var(--gold);color:var(--bg)}
+.q5-t{color:var(--gold-light);font-family:var(--serif);font-size:.94rem;font-weight:600;text-align:center;margin-bottom:6px}
+.q5-d{color:var(--txt2);font-size:.79rem;line-height:1.65;text-align:center}
+@media(max-width:900px){.q5-g{grid-template-columns:repeat(2,1fr)}.q5-g::before{display:none}
+ .q5-i:last-child{grid-column:1/-1;max-width:50%;margin:0 auto}}
+@media(max-width:520px){.q5-g{grid-template-columns:1fr}.q5-i:last-child{max-width:none}}
 /* ---------- glossary ---------- */
 .gl{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:14px}
 .gli{background:var(--card);border:1px solid var(--card-b);border-radius:12px;padding:16px 18px;transition:.3s}
@@ -756,6 +813,10 @@ table.tb td:first-child{font-family:"Noto Sans Egyptian Hieroglyphs","Noto Serif
   <div class="scroll-h"><span>SCROLL</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 4v10M6 12l4 4 4-4"/></svg></div>
 </section>
 
+<section class="q5" id="quick">
+  <div class="q5-h reveal"><h2 data-i18n="q5.t">五分钟看懂古埃及</h2><p data-i18n="q5.s">只想快速了解？沿这条线走一遍，就能看懂剩下的部分</p></div>
+  <div class="q5-g reveal" id="q5-g"></div>
+</section>
 <section class="sec" id="ennead">
   <div class="sec-h reveal"><div class="kicker">01 · The Ennead</div><h2 data-i18n="ennead.t">九柱神</h2><div class="d"></div><p data-i18n="ennead.s">赫利奥波利斯创世神话中的九位主神——一个家族，一部宇宙起源史</p></div>
   <div class="lede reveal" data-i18n="ennead.lede">古埃及没有统一的"圣经"，不同城市各有各的创世故事。其中流传最广的是<strong>赫利奥波利斯神系</strong>：太阳神阿图姆（后与拉合一）从原初之水"努恩"中自我生成，独自造出空气之神舒与湿气女神泰芙努特；他们生下大地之神盖布与天空女神努特；这对兄妹又生下奥西里斯、伊西斯、赛特、奈芙蒂斯。<strong>四代九神，把宇宙的构成与人间的王权继承一次讲完。</strong></div>
@@ -890,6 +951,11 @@ table.tb td:first-child{font-family:"Noto Sans Egyptian Hieroglyphs","Noto Serif
 </footer>
 <nav class="rail" id="rail" aria-label="章节导航"></nav>
 <button class="totop" id="totop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="top"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 16V5M5 9l5-5 5 5"/></svg></button>
+<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true" onclick="if(event.target===this)closeLB()">
+  <button class="lb-close" id="lb-close" onclick="closeLB()" aria-label="关闭">&#10005;</button>
+  <img id="lb-img" src="" alt="">
+  <div class="lb-bar"><div class="lb-cap" id="lb-cap"></div><span class="lb-ai" id="lb-ai"></span></div>
+</div>
 <div class="mo" id="modal" role="dialog" aria-modal="true" aria-labelledby="mod-title" aria-hidden="true"><div class="mc"><button class="mc-close" id="mod-close" onclick="closeModal()" aria-label="关闭">&#10005;</button><div class="mh"><div class="ms" id="mod-sym"></div><div class="mt"><h2 id="mod-title"></h2><p class="lat" id="mod-lat"></p></div></div><div class="mb" id="mod-body"></div><div class="ma" id="mod-attrs"></div></div></div>
 <script>
 /* ============ theme ============ */
@@ -1056,7 +1122,7 @@ function openModal(id){
 function ma(k,v){return '<div class="ma-i"><div class="ma-icon">'+IC[k]+'</div><div class="ma-txt"><strong>'+L(LBL[k])+'</strong>'+v+'</div></div>'}
 function closeModal(){document.getElementById('modal').classList.remove('active');document.body.style.overflow=''}
 document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal()});
-document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeModal();if(document.getElementById('lightbox'))closeLB();}});
 /* ============ other gods ============ */
 var SV={
  star:'<svg viewBox="0 0 24 24" fill="none" stroke="#d8b45c" stroke-width="1.5"><path d="M12 2L8.5 8.5 2 6l4 6-4 6 6.5-2.5L12 22l3.5-6.5L22 18l-4-6 4-6-6.5 2.5L12 2Z"/></svg>',
@@ -2468,13 +2534,38 @@ var FIGS={
          4:{f:'edfu-temple.jpg',a:{zh:'埃德夫的荷鲁斯神庙',en:'The temple of Horus at Edfu'}},
          5:{f:'temple-pylon.jpg',a:{zh:'神庙塔门：两座地平线之山',en:'A temple pylon — the two mountains of the horizon'}}}
 };
+var LBREG=[];
 function figHTML(gid,i){
  var f=FIGS[gid]&&FIGS[gid][i];if(!f)return '';
  var cap=L(f.a);
- return '<figure class="icf"><img src="'+IMGDIR+f.f+'" alt="'+cap.replace(/"/g,'')+'" loading="lazy" decoding="async"'
+ var k=LBREG.push({src:IMGDIR+f.f,cap:cap})-1;
+ return '<figure class="icf" tabindex="0" role="button" aria-label="'+cap.replace(/"/g,'')+'" onclick="openLB('+k+')">'
+  +'<img src="'+IMGDIR+'sm/'+f.f+'" alt="'+cap.replace(/"/g,'')+'" loading="lazy" decoding="async" width="600" height="400"'
   +' onerror="var p=this.parentNode;if(p&&p.parentNode)p.parentNode.removeChild(p)">'
   +'<span class="aibadge">'+(Lang==='zh'?'AI 生成':'AI-generated')+'</span>'
+  +'<span class="zoomi"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="9" r="6"/><path d="M13.5 13.5L17.5 17.5M9 6.5v5M6.5 9h5"/></svg></span>'
   +'<figcaption>'+cap+'</figcaption></figure>';
+}
+var _lbFocus=null;
+function openLB(k){
+ var it=LBREG[k];if(!it)return;
+ var lb=document.getElementById('lightbox');
+ document.getElementById('lb-img').src=it.src;
+ document.getElementById('lb-img').alt=it.cap;
+ document.getElementById('lb-cap').textContent=it.cap;
+ document.getElementById('lb-ai').textContent=(Lang==='zh'?'AI 生成':'AI-generated');
+ _lbFocus=document.activeElement;
+ lb.classList.add('on');lb.setAttribute('aria-hidden','false');
+ document.body.style.overflow='hidden';
+ var c=document.getElementById('lb-close');if(c&&c.focus)setTimeout(function(){try{c.focus()}catch(e){}},60);
+}
+function closeLB(){
+ var lb=document.getElementById('lightbox');
+ lb.classList.remove('on');lb.setAttribute('aria-hidden','true');
+ document.body.style.overflow='';
+ document.getElementById('lb-img').src='';
+ if(_lbFocus&&_lbFocus.focus)try{_lbFocus.focus()}catch(e){}
+ _lbFocus=null;
 }
 function renderInfoGrid(id,items){
  var g=document.getElementById(id);if(!g||!items)return;var h='';
@@ -2560,6 +2651,7 @@ function scheduleSections(){
  }
 }
 function renderAll(){
+ LBREG=[];
  renderHeroBits();
  scheduleSections();
  document.querySelectorAll('[data-i18n-ph]').forEach(function(el){
@@ -2650,7 +2742,7 @@ function jump(id,to,silent){
 function sizeBookScroll(id){
  var b=books[id],sc=bkScroller(id);if(!b||!sc)return;
  var stick=sc.firstElementChild;if(!stick)return;
- sc.style.height=Math.round(stick.offsetHeight+maxPos(b)*window.innerHeight*0.5)+'px';
+ sc.style.height=Math.round(stick.offsetHeight+maxPos(b)*window.innerHeight*0.34)+'px';
 }
 function preSizeBooks(){
  var vh=window.innerHeight,mob=window.innerWidth<820;
@@ -2658,7 +2750,7 @@ function preSizeBooks(){
  var conf={ht:hEvents.length+2,mtl:mEvents.length+2};
  for(var id in conf){
   var sc=document.getElementById(id+'-scroll');if(!sc||books[id])continue;
-  sc.style.height=Math.round(stick+(conf[id]-1)*vh*0.5)+'px';
+  sc.style.height=Math.round(stick+(conf[id]-1)*vh*0.34)+'px';
  }
 }
 /* ============ v10: about & disclaimer ============ */
@@ -2700,6 +2792,52 @@ function renderAbout(){
  g.innerHTML=h;
 }
 SECMAP.about=function(){renderAbout()};
+/* ============ v11: 五分钟路线 + 卷末跳转 ============ */
+(function(){
+ var add={zh:{'q5.t':'五分钟看懂古埃及','q5.s':'只想快速了解？沿这条线走一遍，就能看懂剩下的部分','bk.end':'跳到卷末'},
+  en:{'q5.t':'Ancient Egypt in Five Minutes','q5.s':'In a hurry? Walk this line once and the rest of the page will make sense','bk.end':'Skip to end'}};
+ for(var k in add.zh)I18N.zh[k]=add.zh[k];
+ for(var k2 in add.en)I18N.en[k2]=add.en[k2];
+})();
+var q5Data=[
+ {to:'#pharaohs',t:{zh:'一个国家的诞生',en:'A Country Is Born'},
+  d:{zh:'约公元前 3100 年，纳尔迈把上下埃及合成一个国家。此后三千年，国王的头衔一直是"两地之主"。',
+     en:'Around 3100 BC Narmer welded Upper and Lower Egypt into one state. For three millennia the king was "Lord of the Two Lands".'}},
+ {to:'#pyramids',t:{zh:'他们怎么做到的',en:'How Did They Do It'},
+  d:{zh:'230 万块石头，四边误差不到 5 厘米。造塔的不是奴隶，是领面包和啤酒、受伤有人医的埃及农民。',
+     en:'2.3 million blocks, sides within 5 cm of each other. Built not by slaves but by Egyptians paid in bread and beer, with medical care.'}},
+ {to:'#recognise',t:{zh:'为什么神长着兽首',en:'Why Gods Have Animal Heads'},
+  d:{zh:'那不是崇拜动物。豺狼在墓地出没，所以掌管墓地的阿努比斯长着豺狼的头——动物是一种视觉语言。',
+     en:'Not animal worship. Jackals haunt cemeteries, so the god of the necropolis wears a jackal head. The animal is vocabulary.'}},
+ {to:'#mummy',t:{zh:'死亡不是终点',en:'Death Is Not the End'},
+  d:{zh:'灵魂需要一具认得出的身体才能回家。七十天的防腐不是迷信，是他们理解的生命科学。',
+     en:'The soul needed a recognisable body to return to. Seventy days of embalming was not superstition but their life science.'}},
+ {to:'#hiero',t:{zh:'最后一篇铭文',en:'The Last Inscription'},
+  d:{zh:'公元 394 年，一位祭司在菲莱刻下最后一篇象形文字，愿它"存续至永恒"。此后 1400 年无人能读懂埃及。',
+     en:'In AD 394 a priest carved the last hieroglyphs at Philae, hoping they would last "for all time". For 1,400 years nobody could read Egypt.'}}
+];
+function renderQ5(){
+ var g=document.getElementById('q5-g');if(!g)return;var h='';
+ for(var i=0;i<q5Data.length;i++){var q=q5Data[i];
+  h+='<a class="q5-i" href="'+q.to+'"><div class="q5-n">'+(i+1)+'</div>'+
+     '<div class="q5-t">'+L(q.t)+'</div><div class="q5-d">'+L(q.d)+'</div></a>';}
+ g.innerHTML=h;
+}
+/* 卷轴：加一个跳到卷末的按钮 */
+var _buildRaw=buildBook;
+buildBook=function(id,pages){
+ _buildRaw(id,pages);
+ var b=books[id];if(!b)return;
+ var nav=b.el.querySelector('.bk-nav');if(!nav)return;
+ if(nav.querySelector('[data-act=end]'))return;
+ var btn=document.createElement('button');
+ btn.className='bk-btn';btn.setAttribute('data-act','end');
+ btn.innerHTML=I18N[Lang]['bk.end']+'<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 4l6 6-6 6M14 4v12"/></svg>';
+ btn.addEventListener('click',function(){jump(id,maxPos(b))});
+ nav.appendChild(btn);
+};
+var _renderAllRaw=renderAll;
+renderAll=function(){_renderAllRaw();renderQ5();observe();};
 /* ============ effects ============ */
 var _io=null;
 function observe(){
