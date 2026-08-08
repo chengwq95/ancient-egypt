@@ -524,6 +524,40 @@ table.tb td:first-child{font-family:"Noto Sans Egyptian Hieroglyphs","Noto Serif
  backdrop-filter:blur(5px);pointer-events:none}
 [data-theme=light] .aibadge{background:rgba(58,44,20,.72);color:#f8efd6}
 .foot-note{max-width:660px;margin:14px auto 0;color:var(--txt3);font-size:.74rem;line-height:1.85;opacity:.75}
+/* ---------- god card photo ---------- */
+.fc-front.has-photo{justify-content:flex-start;padding:0}
+.fc-front.has-photo::before,.fc-front.has-photo::after{display:none}
+.fc-photo{position:relative;width:100%;height:134px;overflow:hidden;border-radius:15px 15px 0 0;flex-shrink:0;background:rgba(216,180,92,.06)}
+.fc-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s}
+.fc:hover .fc-photo img{transform:scale(1.06)}
+.fc-photo::after{content:"";position:absolute;inset:0;pointer-events:none;
+ background:linear-gradient(180deg,transparent 42%,rgba(11,20,38,.55) 78%,rgba(11,20,38,.92))}
+[data-theme=light] .fc-photo::after{background:linear-gradient(180deg,transparent 42%,rgba(247,239,219,.6) 78%,rgba(247,239,219,.96))}
+.fc-photo .aibadge{left:9px;top:8px;font-size:.55rem;padding:2px 7px}
+.fc-front.has-photo .sym{width:52px;height:52px;margin:-27px auto 8px;position:relative;z-index:3;flex-shrink:0;
+ background:var(--card);border:1px solid var(--card-b);border-radius:50%;
+ display:flex;align-items:center;justify-content:center;box-shadow:0 5px 16px rgba(0,0,0,.35)}
+[data-theme=light] .fc-front.has-photo .sym{background:#f7efdb;box-shadow:0 4px 12px rgba(84,62,22,.22)}
+.fc-front.has-photo .sym svg{width:30px;height:30px;filter:none}
+.fc-body{flex:1;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+ padding:0 18px 18px;text-align:center;overflow-y:auto}
+.fc-body::-webkit-scrollbar{width:3px}
+.fc-body::-webkit-scrollbar-thumb{background:rgba(216,180,92,.3);border-radius:3px}
+@media(hover:none){
+ .fc-front.has-photo .fc-body{justify-content:flex-start}
+ .fc-photo{height:118px}
+}
+/* 弹窗顶部配图 */
+.mod-photo{margin:-38px -34px 22px;height:230px;overflow:hidden;border-radius:17px 17px 0 0;position:relative;background:rgba(216,180,92,.06)}
+.mod-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.mod-photo::after{content:"";position:absolute;inset:0;pointer-events:none;
+ background:linear-gradient(180deg,transparent 45%,rgba(8,17,31,.9))}
+[data-theme=light] .mod-photo::after{background:linear-gradient(180deg,transparent 45%,rgba(248,241,222,.95))}
+.mod-photo .aibadge{left:14px;top:12px}
+.mod-photo figcaption{position:absolute;left:16px;right:16px;bottom:10px;z-index:2;color:#f0e4c4;
+ font-size:.72rem;line-height:1.5;text-shadow:0 1px 6px rgba(0,0,0,.8)}
+[data-theme=light] .mod-photo figcaption{color:#3a2c12;text-shadow:0 1px 5px rgba(255,252,242,.9)}
+@media(max-width:768px){.mod-photo{margin:-28px -20px 18px;height:180px}}
 /* ---------- lightbox ---------- */
 .icf{cursor:zoom-in}
 .zoomi{position:absolute;right:11px;top:10px;z-index:3;width:26px;height:26px;border-radius:50%;
@@ -958,7 +992,7 @@ table.tb td:first-child{font-family:"Noto Sans Egyptian Hieroglyphs","Noto Serif
   <img id="lb-img" src="" alt="">
   <div class="lb-bar"><div class="lb-cap" id="lb-cap"></div><span class="lb-ai" id="lb-ai"></span></div>
 </div>
-<div class="mo" id="modal" role="dialog" aria-modal="true" aria-labelledby="mod-title" aria-hidden="true"><div class="mc"><button class="mc-close" id="mod-close" onclick="closeModal()" aria-label="关闭">&#10005;</button><div class="mh"><div class="ms" id="mod-sym"></div><div class="mt"><h2 id="mod-title"></h2><p class="lat" id="mod-lat"></p></div></div><div class="mb" id="mod-body"></div><div class="ma" id="mod-attrs"></div></div></div>
+<div class="mo" id="modal" role="dialog" aria-modal="true" aria-labelledby="mod-title" aria-hidden="true"><div class="mc"><div id="mod-photo"></div><button class="mc-close" id="mod-close" onclick="closeModal()" aria-label="关闭">&#10005;</button><div class="mh"><div class="ms" id="mod-sym"></div><div class="mt"><h2 id="mod-title"></h2><p class="lat" id="mod-lat"></p></div></div><div class="mb" id="mod-body"></div><div class="ma" id="mod-attrs"></div></div></div>
 <script>
 /* ============ theme ============ */
 function getSysTheme(){return window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'}
@@ -2856,6 +2890,97 @@ jump=function(id,to,silent){
 };
 var _renderAllRaw=renderAll;
 renderAll=function(){_renderAllRaw();renderQ5();observe();};
+/* ============ v12: 神祇配图 ============ */
+var GODIMG={
+ ra:'god-ra', shu:'god-shu', tefnut:'god-tefnut', geb:'god-geb', nut:'god-nut',
+ osiris:'god-osiris', isis:'god-isis', set:'god-set', nephthys:'god-nephthys',
+ 'sun0':'god-horus','sun1':'god-amun','sun2':'god-aten','sun3':'god-ptah',
+ 'death0':'god-anubis','death1':'god-maat','death2':'god-sokar',
+ 'wisdom0':'god-thoth','wisdom1':'god-seshat','wisdom2':'god-serket',
+ 'life0':'god-hathor','life1':'god-bastet','life2':'god-sobek','life3':'god-hapi','life4':'god-bes',
+ 'war0':'god-sekhmet','war1':'god-montu','war2':'god-neith'
+};
+var GODCAP={};
+function godPhoto(key,name,cls){
+ var f=GODIMG[key];if(!f)return '';
+ var alt=(GODCAP[f]?L(GODCAP[f]):name).replace(/"/g,'');
+ return '<div class="'+cls+'"><img src="'+IMGDIR+'sm/'+f+'.jpg" alt="'+alt+'" loading="lazy" decoding="async" width="600" height="400"'
+  +' onerror="var p=this.parentNode;if(p){p.style.display=\'none\';var c=p.parentNode;if(c)c.classList.remove(\'has-photo\')}">'
+  +'<span class="aibadge">'+(Lang==='zh'?'AI 生成':'AI-generated')+'</span></div>';
+}
+/* 翻转卡：正面加照片带 */
+function flipCard(o){
+ var rows='';
+ for(var i=0;i<o.rows.length;i++)if(o.rows[i][1])rows+=ai(o.rows[i][0],o.rows[i][1]);
+ var photo=o.key?godPhoto(o.key,o.name,'fc-photo'):'';
+ var front = photo
+  ? '<div class="fc-front has-photo">'+photo+'<div class="sym">'+o.svg+'</div>'
+    +'<div class="fc-body"><h3>'+o.name+'</h3><p class="lat">'+o.lat+'</p><span class="tag">'+o.role+'</span>'
+    +'<div class="fc-touch">'+rows+'</div></div></div>'
+  : '<div class="fc-front"><div class="sym">'+o.svg+'</div><h3>'+o.name+'</h3><p class="lat">'+o.lat+'</p><span class="tag">'+o.role+'</span>'
+    +'<div class="fc-touch">'+rows+'</div></div>';
+ return '<div class="fc '+(o.cls||'')+'" tabindex="0" role="button" aria-label="'+o.name.replace(/"/g,'')+'" '+(o.attr||'')+' onclick="'+o.click+'"><div class="fc-inner">'+
+  front+
+  '<div class="fc-back"><div class="bh"><div class="bs">'+o.svg+'</div><div class="bt"><h3>'+o.name.split(' / ')[0]+'</h3><p class="lat">'+o.lat+'</p></div></div>'+
+  '<div class="ba">'+rows+'</div><div class="more">'+(Lang==='zh'?'点击查看完整故事 →':'Click for the full story →')+'</div></div></div></div>';
+}
+/* 九柱神：带上 id 作为图片键 */
+function renderEnnead(){
+ var g=document.getElementById('fcg');if(!g)return;var h='';
+ for(var r=0;r<GENS.length;r++){
+  var gen=GENS[r];
+  h+='<div class="tglab reveal">'+I18N[Lang][gen.k]+'<em>'+I18N[Lang][gen.k+'s']+'</em></div>';
+  h+='<div class="tgen tgen-'+(r+1)+'">';
+  for(var j=0;j<gen.ids.length;j++){
+   var d=null;for(var q=0;q<gods.length;q++)if(gods[q].id===gen.ids[j])d=gods[q];
+   var cls='reveal '+(gen.ids.length===1?'gcA':gen.ids.length===2?(j===0?'gcL':'gcR'):'');
+   h+=flipCard({name:L(d.n),lat:d.l,role:L(d.r),svg:d.s,cls:cls,key:d.id,click:"openModal('"+d.id+"')",
+     rows:[['domain',L(d.d)],['symbol',L(d.sym)],['temple',L(d.tem)],['sacred',L(d.ani)]]});
+  }
+  h+='</div>';
+  if(r<JOINS.length)h+='<div class="tjoin"><svg viewBox="0 0 100 52" preserveAspectRatio="none" vector-effect="non-scaling-stroke">'+JOINS[r]+'</svg></div>';
+ }
+ g.innerHTML=h;
+}
+/* 图鉴：分类键 + 序号作为图片键 */
+function renderOtherGods(){
+ var c=document.getElementById('gods-content');if(!c)return;
+ godFlat=[];var h='',fh='<button class="chip'+(godCat==='all'?' on':'')+'" data-c="all">'+I18N[Lang]['gods.all']+'<span class="cnt">18</span></button>';
+ for(var k in ogData){
+  var d=ogData[k];fh+='<button class="chip'+(godCat===k?' on':'')+'" data-c="'+k+'">'+L(d.l)+'<span class="cnt">'+d.g.length+'</span></button>';
+  for(var i=0;i<d.g.length;i++){
+   var g=d.g[i],x=(ogX[k]&&ogX[k][i])||{};
+   var txt=(L(g.n)+' '+g.n.zh+' '+g.n.en+' '+g.l+' '+L(g.d)+' '+L(d.l)+' '+(x.sym?L(x.sym):'')+' '+(x.tem?L(x.tem):'')+' '+(x.ani?L(x.ani):'')).replace(/<[^>]+>/g,'').toLowerCase();
+   godFlat.push({cat:k,txt:txt});
+   h+=flipCard({name:L(g.n),lat:g.l,role:L(d.l),svg:g.s,cls:'reveal',attr:'data-gi="'+(godFlat.length-1)+'"',
+     key:k+i, click:"openGod('"+k+"',"+i+")",
+     rows:[['domain',L(g.d).replace(/<[^>]+>/g,'')],['symbol',x.sym?L(x.sym):''],['temple',x.tem?L(x.tem):''],['sacred',x.ani?L(x.ani):'']]});
+  }
+ }
+ document.getElementById('god-filt').innerHTML=fh;
+ c.innerHTML=h;
+ document.getElementById('god-filt').querySelectorAll('.chip').forEach(function(b){
+  b.addEventListener('click',function(){godCat=b.getAttribute('data-c');
+   document.getElementById('god-filt').querySelectorAll('.chip').forEach(function(o){o.classList.toggle('on',o===b)});
+   filterGods();});
+ });
+ filterGods();
+}
+/* 弹窗顶部配图 */
+function modPhoto(key,name){
+ var el=document.getElementById('mod-photo');if(!el)return;
+ var f=GODIMG[key];
+ if(!f){el.innerHTML='';el.className='';return;}
+ var cap=GODCAP[f]?L(GODCAP[f]):'';
+ el.className='mod-photo';
+ el.innerHTML='<img src="'+IMGDIR+f+'.jpg" alt="'+name.replace(/"/g,'')+'" loading="lazy" decoding="async"'
+  +' onerror="var p=this.parentNode;if(p){p.className=\'\';p.innerHTML=\'\'}">'
+  +'<span class="aibadge">'+(Lang==='zh'?'AI 生成':'AI-generated')+'</span>'
+  +(cap?'<figcaption>'+cap+'</figcaption>':'');
+}
+var _openModalG=openModal, _openGodG=openGod;
+openModal=function(id){_openModalG(id);modPhoto(id,(function(){for(var i=0;i<gods.length;i++)if(gods[i].id===id)return L(gods[i].n);return ''})());};
+openGod=function(cat,i){_openGodG(cat,i);var g=ogData[cat]&&ogData[cat].g[i];modPhoto(cat+i,g?L(g.n):'');};
 /* ============ effects ============ */
 var _io=null;
 function observe(){
