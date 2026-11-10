@@ -1,5 +1,7 @@
 # 古埃及文明全景 · Ancient Egypt
 
+![古埃及文明全景 · Ancient Egypt](docs/screenshot.jpg)
+
 > 古文明系列：[Ancient Egypt](https://github.com/chengwq95/ancient-egypt) · [Ancient Mesopotamia](https://github.com/chengwq95/ancient-mesopotamia) · [Ancient Greece](https://github.com/chengwq95/ancient-greek)
 
 一个中英双语的古埃及科普长页面。从众神与法老到金字塔、木乃伊、象形文字和尼罗河，以互动图鉴、地图与纸莎草卷轴呈现古埃及的信仰、历史和日常生活。
@@ -27,3 +29,7 @@
 - **页面中的重建与氛围图像均由 AI 生成**，仅用于视觉呈现，不能作为文物或建筑的视觉依据。
 - 内容为科普性整理，不是学术出版物；文献差异与仍有争议的说法以页面标注为准。
 - 背景音乐是拟古氛围设计，并非古埃及音乐的精确复原。
+
+## 许可
+
+内容与代码以 [CC BY-NC 4.0](LICENSE) 授权：可在署名且非商业的前提下分享与改编。
